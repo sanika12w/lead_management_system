@@ -33,9 +33,11 @@ const pool = new Pool({
   },
 });
 
-
 app.set("db", pool);
 
+app.get("/", (req, res) => {
+  res.send("Backend is running 🚀");
+});
 
 app.use("/leads", leadRoutes);
 
